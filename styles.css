@@ -1,0 +1,8 @@
+:root {
+    text-align: center;
+    background-color: aquamarine;
+}
+
+.books {
+    display: flex;
+}
