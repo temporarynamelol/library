@@ -13,8 +13,8 @@ function addBook(title, author, pages) {
     myLibrary.push(book);
 }
 
-let title = prompt("Enter a title");
+/*let title = prompt("Enter a title");
 let author = prompt("Enter a author");
-let pages = prompt("Enter a pages");
+let pages = prompt("Enter a pages");*/
 
 addBook(title, author, pages);
