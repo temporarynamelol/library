@@ -11,10 +11,17 @@ function Book(title, author, pages) {
 function addBook(title, author, pages) {
     let book = new Book(title, author, pages);
     myLibrary.push(book);
-}
+} 
 
-let title = prompt("Enter a title");
-let author = prompt("Enter a author");
-let pages = prompt("Enter a pages");
+let button = document.querySelector('#submitButton');
 
-addBook(title, author, pages);
+button.addEventListener('click', () => {
+    let title = document.getElementById('title');
+    let author = document.getElementById('author');
+    let pages = document.getElementById('pages');
+
+    addBook(title.value, author.value, pages.value);
+
+    title.value = author.value = pages.value = '';
+
+});
