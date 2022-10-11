@@ -5,4 +5,12 @@
 
 .books {
     display: flex;
+    margin: 4vh 10vw;
+}
+
+.card {
+    height: 80px;
+    width: 80px;
+
+    background-color: aliceblue;
 }
