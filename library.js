@@ -13,6 +13,18 @@ function addBook(title, author, pages) {
     myLibrary.push(book);
 } 
 
+//Main book container
+const bookstore = document.getElementById("bookStore");
+
+function populateCards () {
+    for(obj of myLibrary) {
+        console.log(obj);
+        const card = document.createElement("div");
+        bookstore.appendChild(card);
+        card.innerText = obj.title + " " + obj.author + " " + obj.pages;
+    }
+}
+
 let button = document.querySelector('#submitButton');
 
 button.addEventListener('click', () => {
@@ -24,4 +36,9 @@ button.addEventListener('click', () => {
 
     title.value = author.value = pages.value = '';
 
+    populateCards();
+
 });
+
+
+
