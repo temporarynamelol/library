@@ -13,6 +13,46 @@ function addBook(title, author, pages) {
     myLibrary.push(book);
 } 
 
+let newBook = document.getElementById("newBook");
+
+newBook.addEventListener("click", () => {
+    let form = document.getElementById("form");
+
+    let title = document.createElement("input");
+    title.setAttribute("id", "title");
+
+    let author = document.createElement("input");
+    author.setAttribute("id", "author");
+
+    let pages = document.createElement("input");
+    pages.setAttribute("id", "pages");
+
+    let submitButton = document.createElement("button");
+    submitButton.setAttribute("id", "submitButton");
+
+    form.appendChild(title);
+    form.appendChild(author);
+    form.appendChild(pages);
+    form.appendChild(submitButton);
+
+    submitButton.addEventListener('click', () => {
+        let title = document.getElementById('title');
+        let author = document.getElementById('author');
+        let pages = document.getElementById('pages');
+    
+        addBook(title.value, author.value, pages.value);
+    
+        title.value = author.value = pages.value = '';
+        
+        form.innerHTML = null;
+
+        populateCards();
+    
+    });
+
+
+});
+
 //Main book container
 const bookstore = document.getElementById("bookStore");
 
@@ -29,20 +69,9 @@ function populateCards () {
 
 }
 
-let button = document.querySelector('#submitButton');
+//let submitButton = document.querySelector('#submitButton');
 
-button.addEventListener('click', () => {
-    let title = document.getElementById('title');
-    let author = document.getElementById('author');
-    let pages = document.getElementById('pages');
 
-    addBook(title.value, author.value, pages.value);
-
-    title.value = author.value = pages.value = '';
-
-    populateCards();
-
-});
 
 
 
