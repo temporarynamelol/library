@@ -17,12 +17,16 @@ function addBook(title, author, pages) {
 const bookstore = document.getElementById("bookStore");
 
 function populateCards () {
-    for(obj of myLibrary) {
-        console.log(obj);
-        const card = document.createElement("div");
-        bookstore.appendChild(card);
-        card.innerText = obj.title + " " + obj.author + " " + obj.pages;
-    }
+
+    const obj = myLibrary[myLibrary.length -1];
+
+    const card = document.createElement("div");
+    card.classList.add("card");
+    //create card and add it to book store
+    bookstore.appendChild(card);
+    //set Book object properties as text on card object
+    card.innerText = obj.title + " " + obj.author + " " + obj.pages;
+
 }
 
 let button = document.querySelector('#submitButton');
