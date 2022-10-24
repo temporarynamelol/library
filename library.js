@@ -18,7 +18,7 @@ let newBook = document.getElementById("newBook");
 
 //on click, query form div from html, add three new inputs for title, author and pages + new submit button
 newBook.addEventListener("click", () => {
-    let body = document.querySelector("body");
+    let html = document.querySelector("html");
 
     let form = document.createElement("div");
     form.setAttribute("id", "form");
@@ -35,7 +35,7 @@ newBook.addEventListener("click", () => {
     let submitButton = document.createElement("button");
     submitButton.setAttribute("id", "submitButton");
     
-    body.appendChild(form);
+    html.appendChild(form);
 
     form.appendChild(title);
     form.appendChild(author);
@@ -51,7 +51,7 @@ newBook.addEventListener("click", () => {
         //reset the values to null
         title.value = author.value = pages.value = null;
         //remove the new book form
-        body.removeChild(form);
+        html.removeChild(form);
         //call populateCards() to add the new card to the page
         populateCards();
     
