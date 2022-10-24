@@ -1,7 +1,10 @@
 :root {
     text-align: center;
     background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .books {
     display: flex;
@@ -13,4 +16,10 @@
     width: 80px;
 
     background-color: aliceblue;
+}
+
+#form {
+    width: 15vw;
+    height: 10vh;
+    border: 1px solid black;
 }
