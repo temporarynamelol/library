@@ -1,13 +1,15 @@
 :root {
     text-align: center;
-    background-color: aquamarine;
+    background-color: #F24E66;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
 
-
+.header {
+    color: #142342;
+}
 .books {
     display: flex;
     margin: 4vh 10vw;
@@ -17,14 +19,25 @@
     height: 80px;
     width: 80px;
 
-    background-color: aliceblue;
+    background-color: #45C6E6;
+    color: #142342;
 }
 
 #form {
     width: 16vw;
-    height: 10vh;
+    height: 20vh;
+
     border: 1px solid black;
+    background-color: #142342;
+    color: #45C6E6;
+
     position: absolute;
     top: 8vh;
     left: calc(50% - 8vw);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-evenly;
 }
