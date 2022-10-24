@@ -23,12 +23,15 @@ newBook.addEventListener("click", () => {
     let form = document.createElement("div");
     form.setAttribute("id", "form");
 
+    let titleText = document.createTextNode("Title");
     let title = document.createElement("input");
     title.setAttribute("id", "title");
 
+    let authorText = document.createTextNode("Author");
     let author = document.createElement("input");
     author.setAttribute("id", "author");
 
+    let pagesText = document.createTextNode("Pages");
     let pages = document.createElement("input");
     pages.setAttribute("id", "pages");
 
@@ -37,8 +40,11 @@ newBook.addEventListener("click", () => {
     
     html.appendChild(form);
 
+    form.appendChild(titleText);
     form.appendChild(title);
+    form.appendChild(authorText);
     form.appendChild(author);
+    form.appendChild(pagesText);
     form.appendChild(pages);
     form.appendChild(submitButton);
     //when submit button is clicked, call the addBook() function with the new values
