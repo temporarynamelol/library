@@ -25,7 +25,7 @@
 
 #form {
     width: 16vw;
-    height: 20vh;
+    height: 30vh;
 
     border: 1px solid black;
     background-color: #142342;
@@ -35,9 +35,14 @@
     top: 8vh;
     left: calc(50% - 8vw);
 
-    display: flex;
-    flex-direction: column;
-
     align-items: center;
     justify-content: space-evenly;
+}
+
+#form input {
+    width: 14vw;
+}
+
+#form button {
+    margin-top: 2vh;
 }
