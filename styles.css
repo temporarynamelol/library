@@ -43,6 +43,12 @@
     width: 14vw;
 }
 
-#form button {
+#submitButton {
     margin-top: 2vh;
+}
+
+#close {
+    position: absolute;
+    top: 1.5vh;
+    right: 1.5vh;
 }
