@@ -15,56 +15,31 @@ function addBook(title, author, pages) {
 
 //add book button
 let newBook = document.getElementById("newBook");
+let form = document.getElementById("form");
+let submitButton = document.getElementById("submitButton");
+form.style.display = "none";
 
 //on click, query form div from html, add three new inputs for title, author and pages + new submit button
 newBook.addEventListener("click", () => {
-    let html = document.querySelector("html");
-
-    let form = document.createElement("div");
-    form.setAttribute("id", "form");
-
-    let titleText = document.createTextNode("Title");
-    let title = document.createElement("input");
-    title.setAttribute("id", "title");
-
-    let authorText = document.createTextNode("Author");
-    let author = document.createElement("input");
-    author.setAttribute("id", "author");
-
-    let pagesText = document.createTextNode("Pages");
-    let pages = document.createElement("input");
-    pages.setAttribute("id", "pages");
-
-    let submitButton = document.createElement("button");
-    submitButton.setAttribute("id", "submitButton");
-    
-    html.appendChild(form);
-
-    form.appendChild(titleText);
-    form.appendChild(title);
-    form.appendChild(authorText);
-    form.appendChild(author);
-    form.appendChild(pagesText);
-    form.appendChild(pages);
-    form.appendChild(submitButton);
-    //when submit button is clicked, call the addBook() function with the new values
-    submitButton.addEventListener('click', () => {
-        let title = document.getElementById('title');
-        let author = document.getElementById('author');
-        let pages = document.getElementById('pages');
-    
-        addBook(title.value, author.value, pages.value);
-        //reset the values to null
-        title.value = author.value = pages.value = null;
-        //remove the new book form
-        html.removeChild(form);
-        //call populateCards() to add the new card to the page
-        populateCards();
-    
-    });
-
+    form.style.display = "flex";
+    form.setAttribute("style", "flex-direction: column; flex-wrap: wrap;");
 
 });
+
+submitButton.addEventListener("click", () => {
+    let title = document.getElementById('title');
+    let author = document.getElementById('author');
+    let pages = document.getElementById('pages');
+
+    addBook(title.value, author.value, pages.value);
+    //reset the values to null
+    title.value = author.value = pages.value = null;
+    //remove the new book form
+    form.style.display = "none";
+    //call populateCards() to add the new card to the page
+    populateCards();
+
+})
 
 //Main book container
 const bookstore = document.getElementById("bookStore");
