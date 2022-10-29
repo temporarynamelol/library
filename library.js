@@ -63,14 +63,21 @@ function populateCards () {
 
     const card = document.createElement("div");
     card.classList.add("card");
-    //create card and add it to book store
-    bookstore.appendChild(card);
+
     //set Book object properties as text on card object
     for(property of Object.values(obj)) {
         let para = document.createElement("p");
         para.innerText = property;
         card.appendChild(para);
     }
+
+    const removeCard = document.createElement("button");
+    removeCard.innerText = "Remove";
+
+    card.appendChild(removeCard);
+    //create card and add it to book store
+    bookstore.appendChild(card);
+
     //card.innerText = obj.title + " " + obj.author + " " + obj.pages;
 
 }
