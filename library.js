@@ -15,17 +15,21 @@ function addBook(title, author, pages) {
 
 //add book button
 const newBook = document.getElementById("newBook");
+//new book form
 const form = document.getElementById("form");
+//submit button on new book form
 const submitButton = document.getElementById("submitButton");
+//hide new book form by default 
 form.style.display = "none";
 
-//on click, query form div from html, add three new inputs for title, author and pages + new submit button
+//on click, set from display to flex to make it visible + set flex attributes
 newBook.addEventListener("click", () => {
     form.style.display = "flex";
     form.setAttribute("style", "flex-direction: column; flex-wrap: wrap;");
 
 });
 
+//when submit button is clicked on new book form, take values from form and create new book object with them
 submitButton.addEventListener("click", () => {
     const title = document.getElementById('title');
     const author = document.getElementById('author');
@@ -34,15 +38,16 @@ submitButton.addEventListener("click", () => {
     addBook(title.value, author.value, pages.value);
     //reset the values to null
     title.value = author.value = pages.value = null;
-    //remove the new book form
+    //hide the new book form
     form.style.display = "none";
     //call populateCards() to add the new card to the page
     populateCards();
 
 });
 
+//close button on new book form
 const close = document.getElementById("close");
-
+//when close button is clicked on new book form, hide the new book form and remove the values from it
 close.addEventListener("click", () => {
     form.style.display = "none";
     title.value = author.value = pages.value = null;
@@ -61,13 +66,11 @@ function populateCards () {
     //create card and add it to book store
     bookstore.appendChild(card);
     //set Book object properties as text on card object
-    card.innerText = obj.title + " " + obj.author + " " + obj.pages;
+    for(property of Object.values(obj)) {
+        let para = document.createElement("p");
+        para.innerText = property;
+        card.appendChild(para);
+    }
+    //card.innerText = obj.title + " " + obj.author + " " + obj.pages;
 
 }
-
-//let submitButton = document.querySelector('#submitButton');
-
-
-
-
-
