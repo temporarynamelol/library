@@ -1,4 +1,4 @@
-let myLibrary = [];
+const myLibrary = [];
 
 // Book object constructor
 function Book(title, author, pages) {
@@ -14,9 +14,9 @@ function addBook(title, author, pages) {
 } 
 
 //add book button
-let newBook = document.getElementById("newBook");
-let form = document.getElementById("form");
-let submitButton = document.getElementById("submitButton");
+const newBook = document.getElementById("newBook");
+const form = document.getElementById("form");
+const submitButton = document.getElementById("submitButton");
 form.style.display = "none";
 
 //on click, query form div from html, add three new inputs for title, author and pages + new submit button
@@ -27,9 +27,9 @@ newBook.addEventListener("click", () => {
 });
 
 submitButton.addEventListener("click", () => {
-    let title = document.getElementById('title');
-    let author = document.getElementById('author');
-    let pages = document.getElementById('pages');
+    const title = document.getElementById('title');
+    const author = document.getElementById('author');
+    const pages = document.getElementById('pages');
 
     addBook(title.value, author.value, pages.value);
     //reset the values to null
@@ -40,6 +40,8 @@ submitButton.addEventListener("click", () => {
     populateCards();
 
 })
+
+
 
 //Main book container
 const bookstore = document.getElementById("bookStore");
