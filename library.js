@@ -39,8 +39,14 @@ submitButton.addEventListener("click", () => {
     //call populateCards() to add the new card to the page
     populateCards();
 
-})
+});
 
+const close = document.getElementById("close");
+
+close.addEventListener("click", () => {
+    form.style.display = "none";
+    title.value = author.value = pages.value = null;
+});
 
 
 //Main book container
