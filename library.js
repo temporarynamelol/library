@@ -22,12 +22,18 @@ function displayForm() {
     form.style.display = "none";
     //add book button
     const addBookButton = document.getElementById("newBook"); 
+    const blur = document.querySelector(".formContainer");
     //on click of add book button, make for visible with correct display attributes
     addBookButton.addEventListener("click", () => {
         form.style.display = "flex";
         form.setAttribute("style", "flex-direction: column;");
-    
+        //set all style attributes for blur
+        blur.setAttribute("style", "z-index: 999; position: fixed; height: 100vh; width: 100vw; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5);");
     });
+
+
+    
+
     //call the submitForm function to listen for click on submit button while visible
     submitForm();
     //call the closeForm function to listen for click on close button while visible
@@ -48,6 +54,9 @@ function submitForm() {
         title.value = author.value = pages.value = null;
         //hide the new book form
         form.style.display = "none";
+        //remove all style from background blur
+        const blur = document.querySelector(".formContainer");
+        blur.style = null;
         //call populateCards() to add the new card to the page
         populateCards();
 
@@ -62,6 +71,8 @@ function closeForm() {
     close.addEventListener("click", () => {
         form.style.display = "none";
         title.value = author.value = pages.value = null;
+        const blur = document.querySelector(".formContainer");
+        blur.style = null;
     });
 }
 
