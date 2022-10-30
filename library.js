@@ -13,6 +13,7 @@ function addBook(title, author, pages) {
     myLibrary.push(book);
 } 
 
+let counter = 0;
 //add book button
 const newBook = document.getElementById("newBook");
 //new book form
@@ -53,16 +54,17 @@ close.addEventListener("click", () => {
     title.value = author.value = pages.value = null;
 });
 
-
 //Main book container
 const bookstore = document.getElementById("bookStore");
 
 function populateCards () {
+    ++counter;
     //grab the most recently added object from myLibrary[] array
     const obj = myLibrary[myLibrary.length -1];
 
     const card = document.createElement("div");
     card.classList.add("card");
+    card.setAttribute("id", `card${counter}`);
 
     //set Book object properties as text on card object
     for(property of Object.values(obj)) {
@@ -71,13 +73,22 @@ function populateCards () {
         card.appendChild(para);
     }
 
-    const removeCard = document.createElement("button");
+
+    let removeCard = document.createElement("button");
+    removeCard.setAttribute("class", "remove");
+    removeCard.setAttribute("id", `${counter}`);
     removeCard.innerText = "Remove";
+
+    console.log(removeCard.getAttribute("id"));
+
+    removeCard.addEventListener("click", () => {
+        let link = removeCard.getAttribute("id");
+        let removed = document.getElementById(`card${link}`);
+        removed.remove();
+    });
 
     card.appendChild(removeCard);
     //create card and add it to book store
     bookstore.appendChild(card);
-
-    //card.innerText = obj.title + " " + obj.author + " " + obj.pages;
 
 }
