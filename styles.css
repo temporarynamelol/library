@@ -1,14 +1,22 @@
 :root {
     text-align: center;
-    background-color: #F24E66;
+    background-color: white;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
 
+@font-face {
+    font-family: "permanentMarker";
+    src: url(./fonts/PermanentMarker-Regular.ttf);
+}
+
 .header {
-    color: #142342;
+    color: #2c5e44;
+    font-family: 'permanentMarker';
+    font-size: 4rem;
 }
 .books {
     display: flex;
@@ -17,20 +25,19 @@
 
 .card {
 
-    background-color: #45C6E6;
-    color: #142342;
+    background-color: #2c5e44;
+    color: white;
 }
 
 #form {
     width: 16vw;
     height: 30vh;
 
-    border: 1px solid black;
-    background-color: #142342;
-    color: #45C6E6;
+    background-color: #2c5e44;
+    color: white;
 
     position: absolute;
-    top: 8vh;
+    top: 15vh;
     left: calc(50% - 8vw);
 
     align-items: center;
