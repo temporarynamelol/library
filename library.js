@@ -80,11 +80,19 @@ function populateCards () {
     card.classList.add("card");
     card.setAttribute("id", `card${counter}`);
 
+    //Labes for each value of the card
+    const labels = ["Title", "Author", "Pages"];
+    //itterator for labels
+    let i = 0;
     //set Book object properties as text on card object
     for(property of Object.values(obj)) {
         let para = document.createElement("p");
         para.innerText = property;
+        let header = document.createElement("h4");
+        header.innerText = labels[i];
+        card.appendChild(header);
         card.appendChild(para);
+        ++i;
     }
     //create remove button with uniquely numbered id
     let removeButton = document.createElement("button");
