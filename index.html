@@ -10,21 +10,21 @@
 </head>
 <body>
     <h1 class="header">WELCOME TO THE LIBRARY</h1>
-    <button class="newBook" id="newBook">Add Book</button>
+    <button class="newBook" id="newBook">+</button>
     <div class="books" id="bookStore">
         
     </div>
     <div class="formContainer">
-        <div id="form">
+        <form id="form">
             <button id="close">X</button>
             <p>Title</p>
-            <input id="title">
+            <input id="title" required>
             <p>Author</p>
-            <input id="author">
+            <input id="author" required>
             <p>Pages</p>
-            <input id="pages" type="number" max="10000" min="0">
-            <button id="submitButton">Add To Library</button>
-        </div>
+            <input id="pages" type="number" max="10000" min="0" required>
+            <button id="submitButton" type="submit">Add To Library</button>
+        </form>
     </div>
 </body>
 </html>
