@@ -23,6 +23,23 @@ body {
     font-family: 'permanentMarker';
     font-size: 4rem;
 }
+
+.newBook {
+    all: unset;
+    font-size: 62px;
+    background-color: #2c5e44;
+    color: white;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+
+}
+
+.newBook:hover {
+    background-color: #234b36;
+    color: rgb(236, 236, 236);
+}
+
 .books {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
