@@ -80,45 +80,89 @@ body {
 
 .formContainer {
     position: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #form {
-    width: 16vw;
-    height: 30vh;
+
+    font-size: 32px;
+    padding: 20px;
+
+    border-radius: 18px;
+    width: 320px;
+    height: 550px;
 
     background-color: #2c5e44;
     color: white;
 
-    position: absolute;
-    top: 15vh;
-    left: calc(50% - 8vw);
-
+    display: flex;
     align-items: center;
     justify-content: space-evenly;
+
+    position: relative;
+
+    font-family: "permanentMarker";
+}
+
+#form > *:nth-child(2) {
+    margin-top: 8px;
 }
 
 #form input {
-    width: 14vw;
+    width: 250px;
+    height: 32px !important;
+    border-radius: 10px;
 }
 
+
+
 #submitButton {
+    all: unset;
+
+    padding: 8px 40px;
+    margin: 32px !important;
+    color: #2c5e44;
+    background-color: white;
+
+    font-family: "bebas";
+    font-size: 28px;
+
+    border-radius: 12px;
+
     margin-top: 2vh;
 }
 
 #close {
+    all: unset;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    color: #2c5e44;
+    background-color: white;
+    font-family: "bebas";
+
     position: absolute;
-    top: 1.5vh;
-    right: 1.5vh;
+    top: 3.8vh;
+    right: 3.8vh;
+
+    
 }
 
 .remove {
     all: unset;
     background: white;
     color: #2c5e44;
-    padding: 8px 50px;
+    padding: 8px 60px;
     border-radius: 12px;
     font-size: 24px;
     margin: 16px;
+    font-family: "bebas";
 }
 
 .remove:hover {
