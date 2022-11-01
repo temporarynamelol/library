@@ -115,6 +115,9 @@ body {
     width: 250px;
     height: 32px !important;
     border-radius: 10px;
+    padding: 12px;
+    font-size: 26px;
+    font-family: "bebas";
 }
 
 
@@ -148,10 +151,24 @@ body {
     font-family: "bebas";
 
     position: absolute;
-    top: 3.8vh;
-    right: 3.8vh;
+
+    right: 20px;
 
     
+}
+
+.title {
+    justify-self: center;
+
+}
+
+.titleAndClose {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 320px;
 }
 
 .remove {
